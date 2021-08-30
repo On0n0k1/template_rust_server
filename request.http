@@ -1,0 +1,11 @@
+### This is to test the endpoints with the rest server VSCode extension.
+
+###
+GET http://localhost:8000/ HTTP/1.1
+
+### world can be any text
+
+### 
+GET http://localhost:8000/hello/world HTTP/1.1
+
+
