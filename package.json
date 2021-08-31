@@ -1,0 +1,27 @@
+{
+  "name": "template_rust_server",
+  "version": "1.0.0",
+  "description": "Template for Rust servers hosted using docker",
+  "scripts": {
+    "build-docker": "sudo docker build -t rust-template-server -f ./debian/Dockerfile .",
+    "run-docker": "sudo docker run -p 8000:8000 rust-template-server",
+    "remove-docker": "sudo docker rmi rust-template-server --force",
+    "clear-docker":"sudo docker system prune",
+    "build-local": "sudo docker run --rm --user \"$(id -u)\":\"$(id -g)\" -v \"$PWD\":/usr/src/myapp -w /usr/src/myapp rust:latest cargo build --release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/On0n0k1/template_rust_server.git"
+  },
+  "keywords": [
+    "rust",
+    "docker",
+    "warp"
+  ],
+  "author": "Lucas Lemos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/On0n0k1/template_rust_server/issues"
+  },
+  "homepage": "https://github.com/On0n0k1/template_rust_server#readme"
+}

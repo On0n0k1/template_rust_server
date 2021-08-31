@@ -1,6 +1,6 @@
 # Rust Server (template)
 
-## Build
+## Build using docker
 
 How to build and run debian docker image
 
@@ -14,6 +14,14 @@ The image won't stop with ctrl-c, need to run "docker ps" and "docker stop ${ima
 A nameless container with compilation data (2GB) will be created when building. To remove it run "docker system prune". It won't damage the 80MB compiled project.
 
 To remove compiled image run "docker ps -a" then "docker rmi ${image_name} --force" where ${image_name} is the name of the newly created image.
+
+## How to build NPM scripts (using docker):
+
+ - build-docker: Build a docker image of this project.
+ - run-docker: Run the previously built docker. Will need to open another terminal to close it. ("docker ps" then "docker stop ${container_name}", replace ${container_name} with the name of the container).
+ - remove-docker: Remove the image built previously.
+ - clear-docker: Clear the useless image built when compiling. And any other dangling images/containers.
+ - build-local: Compile in a container, then copy the compiled file into the local "./target/release/" folder.
 
 
 ## Note
